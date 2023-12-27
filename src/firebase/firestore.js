@@ -6,6 +6,7 @@ import {
     where,
 } from "firebase/firestore";
 import { db } from "./firebase";
+// import { Raccolta } from "../components/Raccolta";
 
 const RACCOLTA_COLLECTION = "raccolta";
 

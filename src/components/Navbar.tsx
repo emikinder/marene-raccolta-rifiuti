@@ -17,7 +17,7 @@ const Navbar = () => {
             <div className="flex-none">
                 <div className="menu menu-horizontal px-1 font-bold text-white text-lg gap-5">
                     <Link to="/">Raccolta</Link>
-                    <Link to="/sacchetti">Sacchetti</Link>
+                    {/* <Link to="/sacchetti">Sacchetti</Link> */}
                 </div>
             </div>
         </div>
