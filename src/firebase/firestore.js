@@ -1,7 +1,8 @@
 import {
     collection,
     getDocs,
-    // orderBy,
+    limit,
+    orderBy,
     query,
     where,
 } from "firebase/firestore";
@@ -11,14 +12,13 @@ const RACCOLTA_COLLECTION = "raccolta";
 
 export async function getRaccolta() {
     const today = new Date();
-    const threeDaysFromNow = new Date();
-    threeDaysFromNow.setDate(today.getDate() + 3);
 
     const raccoltaRef = collection(db, RACCOLTA_COLLECTION);
     const q = query(
         raccoltaRef,
         where("date", ">=", today),
-        where("date", "<=", threeDaysFromNow)
+        orderBy("date", "asc"),
+        limit(3)
     );
 
     const snapshot = await getDocs(q);

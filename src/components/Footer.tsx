@@ -1,13 +1,13 @@
 const Footer = () => {
     return (
-        <footer className="footer footer-center p-10 bg-sky-600 text-primary-content bottom-0 h-[30vh]">
+        <footer className="footer footer-center p-5 bg-sky-600 text-primary-content mt-auto">
             <aside>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     x="0px"
                     y="0px"
-                    width="100"
-                    height="100"
+                    width="70"
+                    height="70"
                     viewBox="0 0 48 48"
                 >
                     <path
@@ -26,6 +26,11 @@ const Footer = () => {
                     <br />
                     Marene, Italia
                 </p>
+                <div className="border-2 rounded-md border-green-700 p-2">
+                    <p>Numero verde gratuito</p>
+                    <p><b>800 957 793</b></p>
+                    <small>(interno 24)</small>
+                </div>
             </aside>
         </footer>
     );

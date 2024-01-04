@@ -8,7 +8,6 @@ export type Raccolta = {
     id: number;
     date: Timestamp;
     type: string;
-    urbano: boolean;
 };
 
 const Raccolta = () => {
@@ -36,7 +35,7 @@ const Raccolta = () => {
     }
 
     return (
-        <div className="grid gap-3 grid-cols-1 md:grid-cols-6 mt-2">
+        <div className="grid gap-3 grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 mt-2">
             {raccoltaItems?.map((item) => (
                 <Card
                     key={item.id}
