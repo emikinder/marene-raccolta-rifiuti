@@ -1,24 +1,13 @@
-import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import Sachetti from "./pages/Sacchetti";
 import Footer from "./components/Footer";
+import AppRoutes from "./routes/AppRoutes";
 
 function App() {
     return (
-        <main className="">
+        <main className="flex flex-col min-h-[100vh]">
             <Navbar />
-            <Routes>
-                <Route
-                    path="/"
-                    element={<Home />}
-                />
-                <Route
-                    path="/sacchetti"
-                    element={<Sachetti />}
-                />
-            </Routes>
+            <AppRoutes />
             <Footer />
         </main>
     );

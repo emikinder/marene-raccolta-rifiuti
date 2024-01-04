@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  margin: 0;
+@font-face {
+    font-family: "Inter";
+    src: url("./assets/fonts/Inter-Regular.ttf");
+}
+
+
+body {
+    @apply font-inter;
 }
