@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getRaccolta, IRaccolta } from "../firebase/firestore.js";
+import { getRaccolta, IRaccolta } from "../firebase/firestore.ts";
 import Card from "./Card.js";
 import Loading from "./Loading.js";
 
