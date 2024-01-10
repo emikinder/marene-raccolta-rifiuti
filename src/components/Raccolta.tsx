@@ -1,17 +1,10 @@
 import { useEffect, useState } from "react";
-import { getRaccolta } from "../firebase/firestore.js";
+import { getRaccolta, IRaccolta } from "../firebase/firestore.js";
 import Card from "./Card.js";
-import { Timestamp } from "firebase/firestore";
 import Loading from "./Loading.js";
 
-export type Raccolta = {
-    id: number;
-    date: Timestamp;
-    type: string;
-};
-
 const Raccolta = () => {
-    const [raccoltaItems, setRaccoltaItems] = useState<Raccolta[]>();
+    const [raccoltaItems, setRaccoltaItems] = useState<IRaccolta[]>();
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
@@ -21,7 +14,7 @@ const Raccolta = () => {
                 const data = await getRaccolta();
                 setRaccoltaItems(data);
             } catch (err) {
-                console.log(err);
+                console.error(err);
             } finally {
                 setIsLoading(false);
             }

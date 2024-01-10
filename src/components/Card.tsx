@@ -1,7 +1,7 @@
-import { Raccolta } from "./Raccolta";
+import { IRaccolta } from "./../firebase/firestore";
 
 type Props = {
-    raccolta: Raccolta;
+    raccolta: IRaccolta;
 };
 
 const Card = ({ raccolta }: Props) => {
