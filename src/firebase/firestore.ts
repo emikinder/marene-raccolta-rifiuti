@@ -10,7 +10,15 @@ import { db } from "./firebase";
 
 const RACCOLTA_COLLECTION = "raccolta";
 
-export async function getRaccolta() {
+import { Timestamp } from "firebase/firestore";
+
+export interface IRaccolta {
+    id: string;
+    date: Timestamp;
+    type: string;
+}
+
+export async function getRaccolta(): Promise<IRaccolta[]> {
     const today = new Date();
 
     const raccoltaRef = collection(db, RACCOLTA_COLLECTION);
@@ -22,9 +30,10 @@ export async function getRaccolta() {
     );
 
     const snapshot = await getDocs(q);
-    const raccoltaData = snapshot.docs.map((doc) => ({
+    const raccoltaData: IRaccolta[] = snapshot.docs.map((doc) => ({
         id: doc.id,
-        ...doc.data(),
+        date: doc.data().date,
+        type: doc.data().type,
     }));
     return raccoltaData;
 }
