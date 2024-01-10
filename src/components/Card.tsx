@@ -32,13 +32,6 @@ const Card = ({ raccolta }: Props) => {
         weekday: "long",
     });
 
-    let title = "Più avanti";
-    if (isRaccoltaToday) {
-        title = "Entro le ore 6";
-    } else if (isRaccoltaTomorrow) {
-        title = "Prossima raccolta";
-    }
-
     return (
         <div
             className={`card ${
@@ -49,7 +42,11 @@ const Card = ({ raccolta }: Props) => {
         >
             <div className="card-body p-4 gap-0">
                 <div className="text-xl mb-1 flex justify-between">
-                    <p>{title}</p>
+                    <p>
+                        {isRaccoltaToday
+                            ? "Entro le ore 6"
+                            : "Prossima raccolta"}
+                    </p>
                     {isRaccoltaToday && (
                         <div className="badge badge-accent text-white">
                             OGGI
