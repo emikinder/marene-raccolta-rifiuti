@@ -1,5 +1,6 @@
 import { Route, Routes, useNavigate } from "react-router-dom";
 import Home from "../pages/Home";
+import Contact from "../pages/Contact";
 import { useEffect } from "react";
 
 const AppRoutes = () => {
@@ -17,6 +18,10 @@ const AppRoutes = () => {
             <Route
                 path="/"
                 element={<Home />}
+            />
+            <Route
+                path="/contact"
+                element={<Contact />}
             />
             <Route
                 path="*"

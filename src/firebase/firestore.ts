@@ -1,6 +1,7 @@
 import {
     collection,
     getDocs,
+    addDoc,
     limit,
     orderBy,
     query,
@@ -36,4 +37,24 @@ export async function getRaccolta(): Promise<IRaccolta[]> {
         type: doc.data().type,
     }));
     return raccoltaData;
+}
+
+export async function submitMessage(
+    name: string,
+    email: string,
+    message: string
+) {
+    const messagesRef = collection(db, "messages");
+    try {
+        const response = await addDoc(messagesRef, {
+            name,
+            email,
+            message,
+            date: new Date(),
+        });
+        return { success: true, id: response.id };
+    } catch (error) {
+        console.error("Error adding document: ", error);
+        return { success: false, error };
+    }
 }
