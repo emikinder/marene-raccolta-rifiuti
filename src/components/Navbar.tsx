@@ -1,10 +1,18 @@
 import Flag from "@/assets/italy-flag.png";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
+    const handleClick = () => {
+        const detailsElement = document.querySelector("details");
+        if (detailsElement) {
+            detailsElement.removeAttribute("open");
+        }
+    };
+
     return (
         <nav className="navbar bg-sky-600 px-4 h-[8vh]">
             <div className="flex-1 navbar-start">
-                <a className="btn btn-ghost text-xl">
+                <a className="btn btn-ghost text-xl" href="/">
                     <img
                         src={Flag}
                         alt="logo"
@@ -12,6 +20,56 @@ const Navbar = () => {
                     />
                     <span className="text-white"></span>
                 </a>
+            </div>
+            <div className="navbar-end">
+                <details className="dropdown dropdown-end">
+                    <summary
+                        tabIndex={0}
+                        role="button"
+                        className="btn btn-ghost lg:hidden"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            className="inline-block w-7 h-7 stroke-current text-white"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
+                                d="M4 6h16M4 12h16M4 18h16"
+                            ></path>
+                        </svg>
+                    </summary>
+                    <ul
+                        tabIndex={0}
+                        className="menu menu-lg dropdown-content mt-3 z-[1] p-2 shadow bg-sky-600 text-white rounded-box w-52"
+                    >
+                        <li onClick={handleClick}>
+                            <Link to="/">Raccolta</Link>
+                        </li>
+                        {/* <li onClick={handleClick}>
+                            <Link to="/sacchetti">Sacchetti</Link>
+                        </li> */}
+                        <li onClick={handleClick}>
+                            <Link to="/contact">Contatto</Link>
+                        </li>
+                    </ul>
+                </details>
+            </div>
+            <div className="navbar-end hidden lg:flex">
+                <ul className="menu menu-horizontal px-1 text-white">
+                    <li>
+                        <Link to="/">Raccolta</Link>
+                    </li>
+                    {/* <li>
+                        <Link to="/sacchetti">Sacchetti</Link>
+                    </li> */}
+                    <li>
+                        <Link to="/contact">Contatto</Link>
+                    </li>
+                </ul>
             </div>
         </nav>
     );
