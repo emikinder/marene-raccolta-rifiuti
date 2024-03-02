@@ -7,8 +7,8 @@ const Home = () => {
                 <h1 className="text-3xl font-bold">Marene</h1>
                 <h2 className="text-2xl">
                     Raccolta rifiuti <span className="text-3xl">2024</span>
-                    <Raccolta />
                 </h2>
+                <Raccolta />
             </div>
         </section>
     );

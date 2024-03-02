@@ -1,18 +1,22 @@
 import Flag from "@/assets/italy-flag.png";
 import { Link } from "react-router-dom";
+import Indicator from "./indicator";
 
 const Navbar = () => {
-    const handleClick = () => {
-        const detailsElement = document.querySelector("details");
-        if (detailsElement) {
-            detailsElement.removeAttribute("open");
-        }
-    };
+    // const handleClick = () => {
+    //     const detailsElement = document.querySelector("details");
+    //     if (detailsElement) {
+    //         detailsElement.removeAttribute("open");
+    //     }
+    // };
 
     return (
         <nav className="navbar bg-sky-600 px-4 h-[8vh]">
             <div className="flex-1 navbar-start">
-                <a className="btn btn-ghost text-xl" href="/">
+                <a
+                    className="btn btn-ghost text-xl"
+                    href="/"
+                >
                     <img
                         src={Flag}
                         alt="logo"
@@ -21,7 +25,7 @@ const Navbar = () => {
                     <span className="text-white"></span>
                 </a>
             </div>
-            <div className="navbar-end">
+            {/* <div className="navbar-end">
                 <details className="dropdown dropdown-end">
                     <summary
                         tabIndex={0}
@@ -49,25 +53,27 @@ const Navbar = () => {
                         <li onClick={handleClick}>
                             <Link to="/">Raccolta</Link>
                         </li>
-                        {/* <li onClick={handleClick}>
+                        <li onClick={handleClick}>
                             <Link to="/sacchetti">Sacchetti</Link>
-                        </li> */}
+                        </li>
                         <li onClick={handleClick}>
                             <Link to="/contact">Contatto</Link>
                         </li>
                     </ul>
                 </details>
-            </div>
-            <div className="navbar-end hidden lg:flex">
-                <ul className="menu menu-horizontal px-1 text-white">
-                    <li>
+            </div> */}
+            <div className="navbar-end">
+                <ul className="flex px-1 text-white">
+                    <li className="btn btn-ghost">
                         <Link to="/">Raccolta</Link>
                     </li>
                     {/* <li>
                         <Link to="/sacchetti">Sacchetti</Link>
                     </li> */}
-                    <li>
-                        <Link to="/contact">Contatto</Link>
+                    <li className="btn btn-ghost">
+                        <Indicator>
+                            <Link to="/contact">Contatto</Link>
+                        </Indicator>
                     </li>
                 </ul>
             </div>

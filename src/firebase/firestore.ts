@@ -58,3 +58,17 @@ export async function submitMessage(
         return { success: false, error };
     }
 }
+
+// import { items } from "../assets/data.json";
+// export async function addRaccoltaItems() {
+//     const raccoltaRef = collection(db, RACCOLTA_COLLECTION);
+
+//     // Use Promise.all to wait for all addDoc promises to resolve
+//     await Promise.all(
+//         items.map(async (item) => {
+//             const newItem = { ...item, date: new Date(item.date)};
+//             console.log(newItem);
+//             await addDoc(raccoltaRef, newItem);
+//         })
+//     );
+// }
