@@ -48,6 +48,7 @@ const Footer = () => {
                         <a
                             href="https://www.comune.marene.cn.it/"
                             className="font-semibold hover:underline"
+                            target="_blank"
                         >
                             Comune di Marene
                         </a>
@@ -55,6 +56,7 @@ const Footer = () => {
                 </aside>
             </section>
             <section className="w-full bg-black text-white text-sm flex justify-center items-center">
+                <small className="absolute left-2">v1.0</small>
                 <p className="text-center p-2">
                     made by{" "}
                     <a
@@ -66,7 +68,6 @@ const Footer = () => {
                     </a>{" "}
                     - 2024
                 </p>
-                <small className="absolute right-2">v1.0</small>
             </section>
         </footer>
     );
