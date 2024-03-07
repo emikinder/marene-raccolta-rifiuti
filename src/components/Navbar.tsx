@@ -1,5 +1,5 @@
 import Flag from "@/assets/italy-flag.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Indicator from "./indicator";
 
 const Navbar = () => {
@@ -9,6 +9,9 @@ const Navbar = () => {
     //         detailsElement.removeAttribute("open");
     //     }
     // };
+    const location = useLocation();
+    const isActive = (path: string) => location.pathname === path;
+    console.log();
 
     return (
         <nav className="navbar bg-sky-600 px-4 h-[8vh]">
@@ -63,18 +66,26 @@ const Navbar = () => {
                 </details>
             </div> */}
             <div className="navbar-end">
-                <ul className="flex px-1 text-white">
-                    <li className="btn btn-ghost">
-                        <Link to="/">Raccolta</Link>
-                    </li>
+                <ul className="flex px-1 text-white gap-1">
+                    <Link
+                        to="/"
+                        className={`btn btn-ghost btn-sm ${
+                            isActive("/") ? "btn-active" : ""
+                        }`}
+                    >
+                        Raccolta
+                    </Link>
                     {/* <li>
                         <Link to="/sacchetti">Sacchetti</Link>
                     </li> */}
-                    <li className="btn btn-ghost">
-                        <Indicator>
-                            <Link to="/contact">Contatto</Link>
-                        </Indicator>
-                    </li>
+                    <Link
+                        to="/contact"
+                        className={`btn btn-ghost btn-sm ${
+                            isActive("/contact") ? "btn-active" : ""
+                        }`}
+                    >
+                        <Indicator>Contatto</Indicator>
+                    </Link>
                 </ul>
             </div>
         </nav>
