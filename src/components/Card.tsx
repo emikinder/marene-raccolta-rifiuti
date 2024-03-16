@@ -14,8 +14,7 @@ const Card = ({ raccolta }: Props) => {
     const isRaccoltaToday = isToday(date);
     const isRaccoltaTomorrow = isTomorrow(date);
 
-    const time = date.toLocaleDateString("it-IT");
-    const day = format(date, "EEEE", { locale: it });
+    const day = format(date, "EEEE d LLLL, yyyy", { locale: it });
 
     return (
         <div
@@ -44,7 +43,7 @@ const Card = ({ raccolta }: Props) => {
                     )}
                 </div>
                 <p className="capitalize">
-                    {day} {time}
+                    {day}
                 </p>
                 <section className="flex justify-between">
                     <p>{raccolta.type}</p>
