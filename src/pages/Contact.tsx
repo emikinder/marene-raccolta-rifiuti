@@ -100,7 +100,7 @@ const Contact = () => {
                     <textarea
                         className="textarea textarea-bordered text-area-md max-h-44"
                         placeholder="Il tuo messaggio"
-                        rows={5}
+                        rows={3}
                         {...register("message", { required: true })}
                     ></textarea>
                     {errors.message?.type === "required" && (
