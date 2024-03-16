@@ -31,16 +31,11 @@ const Footer = () => {
                         width={60}
                     />
                     {/* </section> */}
-                    <p className="font-bold">
-                        Raccolta Rifiuti 2024
-                        <br />
-                        Marene, Italia
-                    </p>
+                    <p className="font-bold">Marene, Italia</p>
                     <div className="border-2 rounded-md border-green-700 p-2">
                         <p>Numero verde gratuito</p>
-                        <p>
-                            <b>800 957 793</b>
-                        </p>
+                        <p>(CoABSeR)</p>
+                        <p className="font-bold">800 957 793</p>
                         <small>(interno 24)</small>
                     </div>
                     <p>
