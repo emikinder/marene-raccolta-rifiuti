@@ -16,6 +16,8 @@ const Card = ({ raccolta }: Props) => {
 
     const day = format(date, "EEEE d LLLL, yyyy", { locale: it });
 
+    const raccoltaDays = raccolta.type.split(",");
+
     return (
         <div
             className={`card ${
@@ -25,7 +27,7 @@ const Card = ({ raccolta }: Props) => {
             }`}
         >
             <div className="card-body p-4 gap-0">
-                <div className="text-xl mb-1 flex justify-between">
+                <div className="text-lg mb-1 flex justify-between">
                     <p>
                         {isRaccoltaToday
                             ? "Entro le ore 6"
@@ -42,12 +44,14 @@ const Card = ({ raccolta }: Props) => {
                         </div>
                     )}
                 </div>
-                <p className="capitalize">
-                    {day}
-                </p>
-                <section className="flex justify-between">
-                    <p>{raccolta.type}</p>
-                </section>
+                <div>
+                    <p className="capitalize text-xl">{day}</p>
+                </div>
+                <ul className="mt-1 list-disc list-inside">
+                    {raccoltaDays.map((day, i) => (
+                            <li key={i}>{day}</li>
+                    ))}
+                </ul>
             </div>
         </div>
     );
