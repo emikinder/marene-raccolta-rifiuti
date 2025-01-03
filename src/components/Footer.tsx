@@ -45,7 +45,7 @@ const Footer = () => {
                     >
                         emikinder.dev
                     </a>{" "}
-                    - 2024
+                    - {new Date().getFullYear()}
                 </p>
             </section>
         </footer>
