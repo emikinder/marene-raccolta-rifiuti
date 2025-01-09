@@ -8,7 +8,7 @@ const Home = () => {
                 <Alert />
                 <h1 className="text-3xl font-bold">Marene</h1>
                 <h2 className="text-2xl">
-                    Raccolta rifiuti <span className="text-3xl">2024</span>
+                    Raccolta rifiuti <span className="text-3xl">{new Date().getFullYear()}</span>
                 </h2>
                 <Raccolta />
             </div>
