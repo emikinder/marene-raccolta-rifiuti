@@ -1,5 +1,6 @@
 import Raccolta from '../components/Raccolta';
 import Alert from '../components/Alert';
+import BuyMeACoffee from '../components/BuyMeACoffee';
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
           <span className="text-3xl">{new Date().getFullYear()}</span>
         </h2>
         <Raccolta />
+        <BuyMeACoffee />
       </div>
     </section>
   );
