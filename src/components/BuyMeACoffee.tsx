@@ -1,10 +1,21 @@
 const BuyMeACoffee = () => {
+  const handleClick = () => {
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'buy_me_a_coffee_click', {
+        event_category: 'donation',
+        event_label: 'Buy Me a Coffee Button',
+        value: 1,
+      });
+    }
+  };
+
   return (
     <div className="flex justify-center md:justify-start mt-4">
       <a
         href="https://www.buymeacoffee.com/emikinder"
         target="_blank"
         rel="noopener noreferrer"
+        onClick={handleClick}
         className="inline-flex items-center px-4 py-2 bg-[#607FFF] text-white font-bold rounded-lg transition-colors"
       >
         Utile? Offrimi un caffè ❤️☕
